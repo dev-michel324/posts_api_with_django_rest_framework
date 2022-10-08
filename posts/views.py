@@ -40,3 +40,15 @@ def post_delete(request, id):
         return Response(serializer.data, status=status.HTTP_200_OK)
     except Post.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['PUT'])
+def post_update(request, id):
+    try:
+        post = Post.objects.get(pk=id)
+        serializer = PostSerializer(post, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    except Post.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
