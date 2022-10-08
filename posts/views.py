@@ -21,3 +21,12 @@ def post_create(request):
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+@api_view(['GET'])
+def post_detail(request, id):
+    try:
+        post = Post.objects.get(pk=id)
+        serializer = PostSerializer(post)
+        return Response(serializer.data)
+    except Post.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
