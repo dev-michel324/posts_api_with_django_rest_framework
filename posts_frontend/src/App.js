@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import './assets/css/spectre/spectre.min.css';
+import './assets/css/style.css';
+
+import Post from './posts';
+import GetPosts from './getPosts';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container" style={{backgroundColor: "red"}}>
+      <div className="container container_md">
+        <h1 className='text-center text-light py-2'>Sistema de postagens</h1>
+        <div className="container">
+          <div className="columns">
+            <GetPosts/>
+            <Post title="Testando" content="Conteudo" />
+            <Post title="Testando2" content="Conteudo" />
+          </div>
+        </div>
+        
+      </div>
     </div>
   );
 }
