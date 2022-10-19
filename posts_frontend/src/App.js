@@ -1,25 +1,23 @@
 import './assets/css/spectre/spectre.min.css';
 import './assets/css/style.css';
+import Post from './components/posts/Post';
 
-// import GetPosts from './getPosts';
-import Evento from './evento';
-import Post from './posts';
-import Form from './Form';
+import Posts from './components/posts/Posts';
 
 function App() {
   return (
-    <div className="container" style={{backgroundColor: "red"}}>
-      <div className="container container_md">
-        <h1 className='text-center text-light py-2'>Sistema de postagens</h1>
-        <div className="container">
-          <div className="columns">
-            {/* <GetPosts/> */}
-            <Post/>
-          </div>
+    <div className="container_md" style={{backgroundColor: "red"}}>
+      <h1 className="text-center my-2">It's working</h1>
+      <div className="columns mx-auto">
+        <div className="column col-5">
+          <Post title="Teste" content="Testando"/>
         </div>
-        <Evento/>
-        <Form/>
+        <div className="column col-5">
+          <Post title="Teste" content="Testando"/>
+        </div>
       </div>
+      
+      <Posts/>
     </div>
   );
 }
