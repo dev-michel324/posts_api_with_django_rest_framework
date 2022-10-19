@@ -1,8 +1,10 @@
 import './assets/css/spectre/spectre.min.css';
 import './assets/css/style.css';
 
+// import GetPosts from './getPosts';
+import Evento from './evento';
 import Post from './posts';
-import GetPosts from './getPosts';
+import Form from './Form';
 
 function App() {
   return (
@@ -11,12 +13,12 @@ function App() {
         <h1 className='text-center text-light py-2'>Sistema de postagens</h1>
         <div className="container">
           <div className="columns">
-            <GetPosts/>
-            <Post title="Testando" content="Conteudo" />
-            <Post title="Testando2" content="Conteudo" />
+            {/* <GetPosts/> */}
+            <Post/>
           </div>
         </div>
-        
+        <Evento/>
+        <Form/>
       </div>
     </div>
   );

@@ -18,11 +18,6 @@ const Post = ({title, content}) => {
     );
 }
 
-Post.propTypes = {
-    title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-}
-
 Post.defaultProps = {
     title: "Waiting title...",
     content: "Waiting content"
